@@ -6,7 +6,7 @@
 
 
 
-.inner_wrap {
+.inner-wrap {
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -69,6 +69,24 @@ footer{
     border-radius: 50px;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    align-items: center;
 }
 
+#total-amount {
+    margin-left: 30px;
+}
+
+#total-price {
+    margin-left: 60px;
+} 
+
+#total-amount, #count, #total-price {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.name-box {
+    display: flex;
+}
 
