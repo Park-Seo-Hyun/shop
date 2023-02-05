@@ -9,6 +9,7 @@
 .inner-wrap {
     max-width: 1440px;
     margin: 0 auto;
+    margin-top: 25px;
 }
 
 header {
@@ -34,7 +35,7 @@ header > .header-name {
     width: 220px;
     height: 300px;
     border: 1px solid black;
-    margin: 10px 130px;
+    margin: 25px 70px;
 }
 
 .item img{
