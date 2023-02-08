@@ -75,7 +75,7 @@ footer{
 }
 
 #total-amount {
-    margin-left: 30px;
+    margin-left: 60px;
 }
 
 #total-price {
@@ -91,3 +91,10 @@ footer{
     display: flex;
 }
 
+#reload {
+    background-color: #b4ccff;
+    border: black solid 1px;
+    margin-left: 60px;
+    width: 50px;
+    height: 30px;    
+}

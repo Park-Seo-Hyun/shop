@@ -11,118 +11,155 @@
 
 <body>
   <header>
-      <span class="header-name">seo-hyun shop</span>
+    <span class="header-name">seo-hyun shop</span>
   </header>
   <main>
-   <div class="inner-wrap">
-    <div class="price">
-      <div id="total-amount">총 수량 : <span id="count">0</span>개</div>
-      <div id="total-price">총 금액 : <span id="cash">0</span>원</div>
+    <div class="inner-wrap">
+      <div class="price">
+        <div id="total-amount">총 수량 : <span id="count">0</span>개</div>
+        <div id="total-price">총 금액 : <span id="cash">0</span>원</div>
+        <button id="reload">reLoad</button>
+      </div>
+      <div class="item-box"></div>
     </div>
-    <div class="item-box">
-      <div class="item">
-        <img src="./image/basketball1.jpeg" alt="STAR 농구공" />
-        <h3 class="item-name">STAR 농구공</h3>
-        <div class="name-box">
-        <p class="item-price">10,000</p>
-        <P>won</P>
-        </div>
-        <input type="number" class="numbers" onchange="Numbers()" value="0" min="0"/>
-      </div>
-      <div class="item">
-        <img src="./image/basketball2.jpg" alt="MOLTEN 배구공" />
-        <h3 class="item-name">MOLTEN 배구공</h3>
-        <div class="name-box">
-          <p class="item-price">15,000</p>
-          <P>won</P>
-        </div>
-          <input type="number" class="numbers" onchange="Numbers()" value="0" min="0"/>
-      </div>
-      <div class="item">
-        <img src="./image/basketball3.jpg" alt="LEGEND 농구공" />
-        <h3 class="item-name">LEGEND 농구공</h3>
-        <div class="name-box">
-          <p class="item-price">20,000</p>
-          <P>won</P>
-        </div>
-        <input type="number" class="numbers" onchange="Numbers()" value="0" min="0"/>
-      </div>
-      <div class="item">
-        <img src="./image/dumbell1.jpeg" alt="25KG 아령" />
-        <h3 class="item-name">25KG 아령</h3>
-        <div class="name-box"> 
-          <p class="item-price">30,000</p>
-          <P>won</P>
-        </div>
-        <input type="number" class="numbers" onchange="Numbers()" value="0" min="0"/>
-      </div>
-      <div class="item">
-        <img src="./image/dumbell2.jpeg" alt="8KG 아령" />
-        <h3 class="item-name">8KG 아령</h3>
-        <div class="name-box">
-          <p class="item-price">40,000</p>
-          <P>won</P>
-        </div>
-        <input type="number" class="numbers" onchange="Numbers()" value="0" min="0"/>
-      </div>
-      <div class="item">
-        <img src="./image/keyboard1.jpg" alt="기본 키보드" />
-        <h3 class="item-name">기본 키보드</h3>
-        <div class="name-box">
-          <p class="item-price">100,000</p>
-          <P>won</P>
-        </div>
-        <input type="number" class="numbers" onchange="Numbers()" value="0" min="0"/>
-      </div>
-      <div class="item">
-        <img src="./image/keyboard2.jpg" alt="LED 키보드" />
-        <h3 class="item-name">LED 키보드</h3>
-        <div class="name-box">
-          <p class="item-price">67,000</p>
-          <P>won</P>
-        </div>
-        <input type="number" class="numbers" onchange="Numbers()" value="0" min="0"/>
-      </div>
-      <div class="item">
-        <img src="./image/notebook1.jpg" alt="맥북" />
-        <h3 class="item-name">맥북</h3>
-        <div class="name-box">
-          <p class="item-price">3,500,000</p>
-          <P>won</P>
-        </div>
-        <input type="number" class="numbers" onchange="Numbers()" value="0" min="0"/>
-      </div>
-    </div>
-   </div>
   </main>
   <footer>
   </footer>
-
 </body>
 <script>
-  function Numbers() {
+  data = {
+    items: [
+      {
+        name: "STAR 농구공",
+        img: "./image/basketball1.jpeg",
+        price: "10,000"
+      },
+      {
+        name: "MOLTEN 배구공",
+        img: "./image/basketball2.jpg",
+        price: "15,000"
+      },
+      {
+        name: "LEGEND 농구공",
+        img: "./image/basketball3.jpg",
+        price: "20,000"
+      },
+      {
+        name: "25KG 아령",
+        img: "./image/dumbell1.jpeg",
+        price: "30,000"
+      },
+      {
+        name: "8KG 아령",
+        img: "./image/dumbell2.jpeg",
+        price: "40,000"
+      },
+      {
+        name: "기본 키보드",
+        img: "./image/keyboard1.jpg",
+        price: "100,000"
+      },
+      {
+        name: "LED 키보드",
+        img: "./image/keyboard2.jpg",
+        price: "670,000"
+      },
+      {
+        name: "맥북",
+        img: "./image/notebook1.jpg",
+        price: "3,500,000"
+      },
+    ]
+  }
+
+  const itemBox = document.querySelector('.item-box');
+  let html = "";
+  for (let i = 0; i < data.items.length; i++) {
+    html += `
+        <div class="item">
+          <img src="${data.items[i].img}" alt="${data.items[i].name}" />
+          <h3 class="item-name">${data.items[i].name}</h3>
+          <div class="name-box">
+            <p class="item-price">${data.items[i].price}</p>
+            <P>won</P>
+          </div>
+          <input type="number" class="numbers" onchange="push()" value="0" min="0" />
+        </div>`;
+  }
+  itemBox.innerHTML = html;
+
+  let numberValue0 = document.getElementsByClassName("numbers")[0];
+  let numberValue1 = document.getElementsByClassName("numbers")[1];
+  let numberValue2 = document.getElementsByClassName("numbers")[2];
+  let numberValue3 = document.getElementsByClassName("numbers")[3];
+  let numberValue4 = document.getElementsByClassName("numbers")[4];
+  let numberValue5 = document.getElementsByClassName("numbers")[5];
+  let numberValue6 = document.getElementsByClassName("numbers")[6];
+  let numberValue7 = document.getElementsByClassName("numbers")[7];
+
+  function uploadData() { // 데이터 값 업로드
+    numberValue0.value = Number(localStorage.getItem('key0'));
+    numberValue1.value = Number(localStorage.getItem('key1'));
+    numberValue2.value = Number(localStorage.getItem('key2'));
+    numberValue3.value = Number(localStorage.getItem('key3'));
+    numberValue4.value = Number(localStorage.getItem('key4'));
+    numberValue5.value = Number(localStorage.getItem('key5'));
+    numberValue6.value = Number(localStorage.getItem('key6'));
+    numberValue7.value = Number(localStorage.getItem('key7'));
+  };
+
+  function Numbers() { // 총 수량, 총 금액 계산
     let total = 0;
     let totalPrice = 0;
     const $count = document.querySelector('#count');
     const $cash = document.querySelector('#cash');
-    for (let i = 0; i < 8; i++) {
-      let $numbers = document.getElementsByClassName("numbers")[i].value;
-      let $itemprice = document.getElementsByClassName("item-price")[i].textContent.replace(/\,/g, "");
-      let $$itemPrice = $itemprice * $numbers;
+    for (let i = 0; i < data.items.length; i++) {
+      const $numbers = document.getElementsByClassName("numbers")[i].value;
+      let itemprice = data.items[i].price.replace(/\,/g, "");
+      let $itemPrice = itemprice * $numbers;
       total += Number($numbers);
-      totalPrice += Number($$itemPrice);
+      totalPrice += Number($itemPrice);
       console.log($numbers);
-      console.log($$itemPrice);
+      console.log($itemPrice);
     }
     console.log(total);
     if (total > 0) {
-      $count.textContent = total;
+      $count.textContent = total.toLocaleString()
       $cash.textContent = totalPrice.toLocaleString();
     } else {
       $count.textContent = 0;
       $cash.textContent = 0;
     }
   };
+  
+  function SaveData() { // 데이터 값 저장 및 업로드
+    localStorage.setItem('key0', numberValue0.value);
+    localStorage.setItem('key1', numberValue1.value);
+    localStorage.setItem('key2', numberValue2.value);
+    localStorage.setItem('key3', numberValue3.value);
+    localStorage.setItem('key4', numberValue4.value);
+    localStorage.setItem('key5', numberValue5.value);
+    localStorage.setItem('key6', numberValue6.value);
+    localStorage.setItem('key7', numberValue7.value);
+    Numbers();
+    uploadData();
+  };
+
+  function push() {
+    SaveData();
+    Numbers();
+  };
+
+  // 새로고침 (데이터 값 삭제)
+  document.getElementById("reload").addEventListener('click', () => {
+    localStorage.clear();
+    uploadData();
+    Numbers();
+  });
+
+  uploadData();
+  Numbers();
+
 </script>
 
 </html>
