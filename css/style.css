@@ -1,10 +1,15 @@
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
-
 
 .inner-wrap {
     max-width: 1440px;
@@ -22,9 +27,9 @@ header {
 }
 
 header > .header-name {
+    font-family: 'BMJUA';
     color: white;
-    font-weight: bold;
-    font-size: 28px;
+    font-size: 36px;
 }
 
 .item {
@@ -34,23 +39,32 @@ header > .header-name {
     flex-direction: column;
     width: 220px;
     height: 300px;
-    border: 1px solid black;
+    border: 1px solid rgb(158, 156, 156);
     margin: 25px 70px;
 }
 
 .item img{
+    margin-bottom: 6px;
     object-fit: cover;
     width: 215px;
     height: 210px;
 }
 
-.item input {
-    display: block;
+.item-name {
+    font-weight: bold;
+    font-size: 15px;
+    color: #3f3f3f;
 }
 
 .item-box {
     display: flex;
     flex-wrap: wrap;
+}
+
+.name-box {
+    font-weight: bold;
+    margin-bottom: 3px;
+    font-size: 19px;
 }
 
 footer{
@@ -72,29 +86,33 @@ footer{
     transform: translateX(-50%);
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
 }
 
-#total-amount {
-    margin-left: 60px;
-}
-
-#total-price {
-    margin-left: 60px;
-} 
-
-#total-amount, #count, #total-price {
+#total {
     font-weight: bold;
     font-size: 20px;
+    display: flex;
+
+}
+
+#total #total-price {
+    margin-left: 30px;
 }
 
 .name-box {
     display: flex;
-}
+} 
 
 #reload {
-    background-color: #b4ccff;
-    border: black solid 1px;
-    margin-left: 60px;
-    width: 50px;
-    height: 30px;    
+    border: 0;
+    width: 120px;
+    height: 40px;
+    background-color: #1a5eef;
+    color: white;
+    box-shadow: 0 4px 16px rgba(0, 79, 255, 0.3);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
 }

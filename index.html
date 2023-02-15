@@ -16,9 +16,11 @@
   <main>
     <div class="inner-wrap">
       <div class="price">
+        <div id="total">
         <div id="total-amount">총 수량 : <span id="count">0</span>개</div>
         <div id="total-price">총 금액 : <span id="cash">0</span>원</div>
-        <button id="reload">reLoad</button>
+        </div>
+        <button id="reload">새로고침</button>
       </div>
       <div class="item-box"></div>
     </div>
@@ -57,7 +59,7 @@
       {
         name: "기본 키보드",
         img: "./image/keyboard1.jpg",
-        price: "100,000"
+        price: "150,000"
       },
       {
         name: "LED 키보드",
@@ -78,10 +80,10 @@
     html += `
         <div class="item">
           <img src="${data.items[i].img}" alt="${data.items[i].name}" />
-          <h3 class="item-name">${data.items[i].name}</h3>
+          <div class="item-name">${data.items[i].name}</div>
           <div class="name-box">
             <p class="item-price">${data.items[i].price}</p>
-            <P>won</P>
+            <P>원</P>
           </div>
           <input type="number" class="numbers" onchange="push()" value="0" min="0" />
         </div>`;
