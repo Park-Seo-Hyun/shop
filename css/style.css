@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,33 +21,53 @@
 .inner-wrap {
     max-width: 1440px;
     margin: 0 auto;
-    margin-top: 100px;
+}
+
+#name {
+    margin: 70px 0 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-family: 'GmarketSansMedium';
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #cae6fa;
-    width: 100%;
-    height: 60px;
-}
-
-header > .header-name {
     font-family: 'BMJUA';
-    color: white;
-    font-size: 36px;
+    border: 1px solid rgb(216, 214, 214);
+    color: rgb(61, 60, 60);
+    width: 100%;
+    height: 80px;
 }
 
-.item {
+header > #header-name {
+    font-weight: bold;
+    font-size: 38px;
+}
+
+#item-wrap {
+    height: 345px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.item {
     width: 220px;
     height: 300px;
-    border: 1px solid rgb(158, 156, 156);
+    border: 1px solid rgb(201, 196, 196);
     margin: 25px 70px;
+}
+
+#wrapwrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .item img{
@@ -68,7 +95,7 @@ header > .header-name {
 }
 
 footer{
-    background-color: #cae6fa;
+    border-top: 1px solid rgb(189, 189, 189);
     width: 100%;
     height: 60px;
     margin-top: 100px;
@@ -94,7 +121,6 @@ footer{
     font-weight: bold;
     font-size: 20px;
     display: flex;
-
 }
 
 #total #total-price {
